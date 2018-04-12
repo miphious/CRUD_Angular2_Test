@@ -26,7 +26,7 @@
     <li *ngFor="let course of courses">
         <a [routerLink]="['/courses', course._id]">{{course.course_code}}</a>
         <br>
-        <small>{{course.course_name}} - Section {{course.section}} - Semester {{course.semester}}</small>
+        <small>{{course.course_name}} - Section {{course.section}} - Semester {{course.semester}} - Student: {{course.creator.fullname}}</small>
         
     </li>
 </ul>
