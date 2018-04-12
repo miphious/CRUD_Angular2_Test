@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="./home.component.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+
+<body>
+
+
+
+
+
+    <div *ngIf="user">
+        <div class="wrapper">
+
+            <div class="island">
+                <h2>Hello, {{user.firstName}}</h2>
+
+                <a href="/api/auth/signout" class="btn btn-danger">Not you? Signout!</a>
+                <hr>
+                <a [routerLink]="['/courses']" class="btn btn-primary sign">List Courses</a>
+
+                <a [routerLink]="['/courses/create']" class="btn btn-primary sign">Create Course</a>
+
+            </div>
+        </div>
+
+    </div>
+    <div *ngIf="!user">
+        <div class="wrapper">
+
+            <div class="island">
+                <h2>It appears that You are not logged in.</h2>
+
+                <a [routerLink]="['/authentication/signup']" class="btn btn-primary sign">Sign Up</a>
+
+                <a [routerLink]="['/authentication/signin']" class="btn btn-primary sign">Sign In</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

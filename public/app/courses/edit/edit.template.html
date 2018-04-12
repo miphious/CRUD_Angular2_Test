@@ -1,0 +1,60 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Navbar -->
+
+<style>
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+</style>
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a  [routerLink]="['/courses/create']" class="w3-bar-item w3-button w3-padding-large">CREATE</a>
+    <a [routerLink]="['/courses/list']" class="w3-bar-item w3-button w3-padding-large">LIST</a>
+    </div>
+</div>
+<br>
+<br>
+<div class="center">
+<h1>Edit Course</h1>
+<form (ngSubmit)="update()" novalidate>
+    <div>
+        <label for="course code">Course Code</label>
+        <div>
+            <input type="text" required [(ngModel)]="course.course_code"
+                   name="course code" placeholder="Course Code">
+        </div>
+    </div>
+    <div>
+        <label for="course name">Course Name</label>
+        <div>
+            <input type="text" required [(ngModel)]="course.course_name"
+                   name="course name" placeholder="Course Name">
+        </div>
+    </div>
+    <div>
+        <label for="section">Section #</label>
+        <div>
+            <input type="text" required [(ngModel)]="course.section"
+                   name="section" placeholder="Section">
+        </div>
+    </div>
+    <div>
+        <label for="semester">Semester</label>
+        <div>
+            <input type="text" required [(ngModel)]="course.semester"
+                   name="semester" placeholder="semester">
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Update">
+    </div>
+    <strong>{{errorMessage}}</strong>
+</form>
+    </div>
